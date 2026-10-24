@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs - Lokonda Business</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-extrabold tracking-wider text-amber-400">
+        LOKONDA BUSINESS
+      </a>
+      
+      <nav class="hidden md:flex space-x-6 text-sm text-slate-300">
+        <a href="index.html" class="hover:text-amber-400 transition">Accueil</a>
+        <a href="marketplace.html" class="hover:text-amber-400 transition">Marketplace</a>
+        <a href="ai.html" class="hover:text-amber-400 transition">Lokonda AI</a>
+        <a href="tarifs.html" class="text-amber-400 font-bold">Tarifs</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="connexion.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white border border-slate-700 rounded-lg transition">
+          Connexion
+        </a>
+        <a href="inscription.html" class="px-4 py-2 text-sm bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition">
+          S'inscrire
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section Tarifs -->
+  <main class="max-w-7xl mx-auto px-4 py-16 flex-grow w-full">
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Forfaits & Tarifs</h1>
+      <p class="text-slate-400">Choisissez la formule adaptée à vos besoins d'affaires.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Débutant</h3>
+          <p class="text-slate-400 text-sm mb-6">Pour démarrer votre visibilité sur la plateforme.</p>
+          <div class="text-4xl font-extrabold mb-6">Gratuit</div>
+          <ul class="space-y-3 text-slate-300 text-sm mb-8">
+            <li>✓ Profil entreprise de base</li>
+            <li>✓ Accès au Marketplace</li>
+            <li>✓ Support par courriel</li>
+          </ul>
+        </div>
+        <a href="inscription.html" class="block text-center py-3 bg-slate-700 hover:bg-slate-600 font-bold rounded-lg transition">Commencer</a>
+      </div>
+
+      <div class="bg-slate-800 border-2 border-amber-500 rounded-2xl p-8 flex flex-col justify-between relative">
+        <div class="absolute -top-4 right-6 bg-amber-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">POPULAIRE</div>
+        <div>
+          <h3 class="text-2xl font-bold mb-2 text-amber-400">Pro Business</h3>
+          <p class="text-slate-400 text-sm mb-6">Accès complet à Lokonda AI et mise en avant.</p>
+          <div class="text-4xl font-extrabold mb-6">Sur Mesure</div>
+          <ul class="space-y-3 text-slate-300 text-sm mb-8">
+            <li>✓ Toutes les options Débutant</li>
+            <li>✓ Accès illimité à Lokonda AI Studio</li>
+            <li>✓ Support prioritaire direct</li>
+          </ul>
+        </div>
+        <a href="inscription.html" class="block text-center py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition">S'abonner Pro</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© Lokonda Business — Forfaits et Tarifs</p>
+    </div>
+  </footer>
+
+</body>
+</html>
