@@ -15,17 +15,18 @@ export default function Home() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0f172a', color: '#ffffff', fontFamily: 'sans-serif' }}>
       {/* Barre de navigation professionnelle */}
-      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px 20px', borderBottom: '1px solid #1e293b', flexWrap: 'wrap', gap: '10px', backgroundColor: '#090d16' }}>
-        <h1 style={{ color: '#f59e0b', fontSize: '18px', margin: 0, cursor: 'pointer' }} onClick={() => setPage('accueil')}>
+      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px 20px', borderBottom: '1px solid #1e293b', flexWrap: 'wrap', gap: '8px', backgroundColor: '#090d16' }}>
+        <h1 style={{ color: '#f59e0b', fontSize: '17px', margin: 0, cursor: 'pointer' }} onClick={() => setPage('accueil')}>
           LOKONDA BUSINESS
         </h1>
-        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', fontSize: '13px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', fontSize: '12px', alignItems: 'center' }}>
           <button onClick={() => setPage('accueil')} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>Accueil</button>
           <button onClick={() => setPage('marketplace')} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>Marketplace</button>
+          <button onClick={() => setPage('abonnements')} style={{ background: 'none', border: 'none', color: '#f59e0b', cursor: 'pointer', fontWeight: 'bold' }}>Abonnements</button>
           <button onClick={() => setPage('studio')} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>Studio IA</button>
           <button onClick={() => setPage('dashboard')} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>Dashboard</button>
-          <button onClick={() => { setPage('connexion'); setIsRegistering(false); }} style={{ backgroundColor: '#1e293b', border: '1px solid #f59e0b', color: '#f59e0b', padding: '6px 12px', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer' }}>Connexion</button>
-          <button onClick={() => { setPage('connexion'); setIsRegistering(true); }} style={{ backgroundColor: '#f59e0b', border: 'none', color: '#0f172a', padding: '6px 12px', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer' }}>S'inscrire</button>
+          <button onClick={() => { setPage('connexion'); setIsRegistering(false); }} style={{ backgroundColor: '#1e293b', border: '1px solid #f59e0b', color: '#f59e0b', padding: '5px 10px', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer' }}>Connexion</button>
+          <button onClick={() => { setPage('connexion'); setIsRegistering(true); }} style={{ backgroundColor: '#f59e0b', border: 'none', color: '#0f172a', padding: '5px 10px', borderRadius: '5px', fontWeight: 'bold', cursor: 'pointer' }}>S'inscrire</button>
         </div>
       </nav>
 
@@ -52,16 +53,58 @@ export default function Home() {
             }}>
               <h2 style={{ fontSize: '24px', color: '#f59e0b', marginBottom: '8px', fontWeight: 'bold' }}>LOKONDA BUSINESS</h2>
               <p style={{ fontStyle: 'italic', fontSize: '14px', color: '#e2e8f0', marginBottom: '20px' }}>« Les idées deviennent des entreprises. »</p>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <button onClick={() => setPage('marketplace')} style={{ backgroundColor: '#f59e0b', color: '#0f172a', padding: '10px 18px', borderRadius: '6px', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>Explorer la Marketplace</button>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <button onClick={() => setPage('abonnements')} style={{ backgroundColor: '#f59e0b', color: '#0f172a', padding: '10px 18px', borderRadius: '6px', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>Voir les Abonnements</button>
                 <button onClick={() => { setPage('connexion'); setIsRegistering(true); }} style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#fff', padding: '10px 18px', borderRadius: '6px', fontWeight: 'bold', border: '1px solid #fff', cursor: 'pointer' }}>Créer mon compte</button>
               </div>
             </div>
-            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: '#1e293b', borderRadius: '10px' }}>
-              <h3 style={{ color: '#f59e0b', marginBottom: '10px' }}>Soutenir les petites entreprises</h3>
-              <p style={{ fontSize: '15px', lineHeight: '1.6', color: '#cbd5e1', margin: 0 }}>
-                Plateforme numérique de référence pour connecter, développer et propulser les activités commerciales au Québec et en République Démocratique du Congo.
+
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: '#1e293b', borderRadius: '10px', marginBottom: '20px' }}>
+              <h3 style={{ color: '#f59e0b', marginBottom: '10px' }}>Soutenir les petites entreprises au Québec et en RDC</h3>
+              <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#cbd5e1', margin: 0 }}>
+                Une plateforme complète pour propulser votre entreprise, gérer votre visibilité en ligne et accéder à des outils intelligents adaptés à vos besoins.
               </p>
+            </div>
+          </div>
+        )}
+
+        {page === 'abonnements' && (
+          <div>
+            <h2 style={{ fontSize: '22px', color: '#f59e0b', marginBottom: '10px', textAlign: 'center' }}>📦 Nos Formules d'Abonnement</h2>
+            <p style={{ color: '#cbd5e1', marginBottom: '25px', fontSize: '14px', textAlign: 'center' }}>Choisissez le plan adapté pour faire croître votre entreprise entre le Québec et la RDC.</p>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
+              {/* Plan Gratuit */}
+              <div style={{ backgroundColor: '#1e293b', padding: '20px', borderRadius: '12px', border: '1px solid #334155', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <h3 style={{ color: '#fff', fontSize: '18px', marginBottom: '5px' }}>Plan Découverte</h3>
+                  <p style={{ fontSize: '24px', color: '#f59e0b', fontWeight: 'bold', margin: '10px 0' }}>Gratuit</p>
+                  <p style={{ color: '#94a3b8', fontSize: '13px', marginBottom: '15px' }}>Idéal pour démarrer votre présence en ligne.</p>
+                  <ul style={{ color: '#cbd5e1', fontSize: '13px', paddingLeft: '20px', lineHeight: '1.6' }}>
+                    <li>1 fiche produit/service</li>
+                    <li>Accès limité au Studio IA</li>
+                    <li>Support communautaire</li>
+                  </ul>
+                </div>
+                <button onClick={() => { setPage('connexion'); setIsRegistering(true); }} style={{ width: '100%', backgroundColor: '#334155', color: '#fff', padding: '10px', borderRadius: '6px', fontWeight: 'bold', border: 'none', cursor: 'pointer', marginTop: '20px' }}>Commencer Gratuitement</button>
+              </div>
+
+              {/* Plan Pro */}
+              <div style={{ backgroundColor: '#1e293b', padding: '20px', borderRadius: '12px', border: '2px solid #f59e0b', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: '-12px', right: '15px', backgroundColor: '#f59e0b', color: '#0f172a', fontSize: '11px', fontWeight: 'bold', padding: '3px 8px', borderRadius: '4px' }}>POPULAIRE</div>
+                <div>
+                  <h3 style={{ color: '#f59e0b', fontSize: '18px', marginBottom: '5px' }}>Plan Entrepreneur Pro</h3>
+                  <p style={{ fontSize: '24px', color: '#f59e0b', fontWeight: 'bold', margin: '10px 0' }}>29 $ / mois</p>
+                  <p style={{ color: '#94a3b8', fontSize: '13px', marginBottom: '15px' }}>Pour les entreprises prêtes à se développer activement.</p>
+                  <ul style={{ color: '#cbd5e1', fontSize: '13px', paddingLeft: '20px', lineHeight: '1.6' }}>
+                    <li>Vitrine Marketplace complète</li>
+                    <li>Studio IA illimité (descriptions & pubs)</li>
+                    <li>Tableau de bord et statistiques avancés</li>
+                    <li>Visibilité prioritaire Québec-RDC</li>
+                  </ul>
+                </div>
+                <button onClick={() => { setPage('connexion'); setIsRegistering(true); }} style={{ width: '100%', backgroundColor: '#f59e0b', color: '#0f172a', padding: '10px', borderRadius: '6px', fontWeight: 'bold', border: 'none', cursor: 'pointer', marginTop: '20px' }}>Choisir Pro</button>
+              </div>
             </div>
           </div>
         )}
@@ -69,11 +112,12 @@ export default function Home() {
         {page === 'marketplace' && (
           <div>
             <h2 style={{ fontSize: '22px', color: '#f59e0b', marginBottom: '15px' }}>🛍️ La Marketplace</h2>
-            <p style={{ color: '#cbd5e1', marginBottom: '20px', fontSize: '14px' }}>Présentez vos produits et services en ligne et touchez de nouveaux marchés.</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-              <div style={{ backgroundColor: '#1e293b', padding: '18px', borderRadius: '10px', borderLeft: '4px solid #f59e0b' }}>
+            <p style={{ color: '#cbd5e1', marginBottom: '20px', fontSize: '14px' }}>Découvrez les produits et services de nos entrepreneurs partenaires.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
+              <div style={{ backgroundColor: '#1e293b', padding: '15px', borderRadius: '10px', borderLeft: '4px solid #f59e0b' }}>
                 <h3 style={{ margin: '0 0 5px 0', fontSize: '16px' }}>Boutique Artisanale RDC-Québec</h3>
-                <p style={{ color: '#94a3b8', fontSize: '13px', margin: 0 }}>Mise en relation directe entre producteurs locaux et acheteurs internationaux.</p>
+                <p style={{ color: '#94a3b8', fontSize: '13px', margin: '0 0 10px 0' }}>Produits locaux d'exception.</p>
+                <span style={{ color: '#f59e0b', fontSize: '12px', fontWeight: 'bold' }}>En vedette</span>
               </div>
             </div>
           </div>
@@ -82,10 +126,10 @@ export default function Home() {
         {page === 'studio' && (
           <div>
             <h2 style={{ fontSize: '22px', color: '#f59e0b', marginBottom: '15px' }}>🤖 Studio IA</h2>
-            <p style={{ color: '#cbd5e1', marginBottom: '15px', fontSize: '14px' }}>Générez des descriptions de produits et optimisez votre visibilité commerciale instantanément.</p>
+            <p style={{ color: '#cbd5e1', marginBottom: '15px', fontSize: '14px' }}>Créez vos textes publicitaires et présentations commerciales en quelques secondes.</p>
             <div style={{ backgroundColor: '#1e293b', padding: '20px', borderRadius: '10px' }}>
-              <h3 style={{ fontSize: '15px', margin: '0 0 10px 0' }}>Assistant Marketing IA</h3>
-              <textarea placeholder="Décrivez votre produit ou service..." style={{ width: '100%', height: '90px', backgroundColor: '#0f172a', color: '#fff', border: '1px solid #475569', borderRadius: '6px', padding: '10px', boxSizing: 'border-box' }}></textarea>
+              <h3 style={{ fontSize: '15px', margin: '0 0 10px 0' }}>Générateur Marketing</h3>
+              <textarea placeholder="Décrivez votre produit..." style={{ width: '100%', height: '90px', backgroundColor: '#0f172a', color: '#fff', border: '1px solid #475569', borderRadius: '6px', padding: '10px', boxSizing: 'border-box' }}></textarea>
               <button style={{ backgroundColor: '#f59e0b', color: '#0f172a', padding: '12px', borderRadius: '6px', fontWeight: 'bold', border: 'none', cursor: 'pointer', marginTop: '12px', width: '100%' }}>Générer le contenu</button>
             </div>
           </div>
@@ -94,10 +138,14 @@ export default function Home() {
         {page === 'dashboard' && (
           <div>
             <h2 style={{ fontSize: '22px', color: '#f59e0b', marginBottom: '15px' }}>📊 Tableau de bord</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '15px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
               <div style={{ backgroundColor: '#1e293b', padding: '18px', borderRadius: '10px', textAlign: 'center' }}>
-                <h3 style={{ fontSize: '15px', margin: '0 0 5px 0', color: '#cbd5e1' }}>Visiteurs Actifs</h3>
-                <p style={{ fontSize: '28px', color: '#f59e0b', fontWeight: 'bold', margin: 0 }}>1,240</p>
+                <h3 style={{ fontSize: '14px', margin: '0 0 5px 0', color: '#cbd5e1' }}>Visiteurs Actifs</h3>
+                <p style={{ fontSize: '26px', color: '#f59e0b', fontWeight: 'bold', margin: 0 }}>1,240</p>
+              </div>
+              <div style={{ backgroundColor: '#1e293b', padding: '18px', borderRadius: '10px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '14px', margin: '0 0 5px 0', color: '#cbd5e1' }}>Formule Actuelle</h3>
+                <p style={{ fontSize: '18px', color: '#34d399', fontWeight: 'bold', margin: 0 }}>Découverte (Gratuit)</p>
               </div>
             </div>
           </div>
