@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace - Lokonda Business</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-extrabold tracking-wider text-amber-400">
+        LOKONDA BUSINESS
+      </a>
+      
+      <nav class="hidden md:flex space-x-6 text-sm text-slate-300">
+        <a href="index.html" class="hover:text-amber-400 transition">Accueil</a>
+        <a href="marketplace.html" class="text-amber-400 font-bold">Marketplace</a>
+        <a href="ai.html" class="hover:text-amber-400 transition">Lokonda AI</a>
+        <a href="tarifs.html" class="hover:text-amber-400 transition">Tarifs</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="connexion.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white border border-slate-700 rounded-lg transition">
+          Connexion
+        </a>
+        <a href="inscription.html" class="px-4 py-2 text-sm bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition">
+          S'inscrire
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section Marketplace -->
+  <main class="max-w-7xl mx-auto px-4 py-12 flex-grow w-full">
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Marketplace Entreprises</h1>
+      <p class="text-slate-400 max-w-2xl mx-auto">
+        Découvrez les entreprises et services partenaires au Canada 🇨🇦 et en RDC 🇨🇩.
+      </p>
+    </div>
+
+    <!-- Grille de produits/services -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg">
+        <div class="bg-amber-500/10 text-amber-400 font-bold px-3 py-1 rounded-full w-max text-xs mb-4">Québec, CA</div>
+        <h3 class="text-xl font-bold mb-2">Services Numériques</h3>
+        <p class="text-slate-400 text-sm mb-6">Création de solutions web et accompagnement technologique pour PME.</p>
+        <a href="connexion.html" class="block text-center py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold text-sm transition">Contacter</a>
+      </div>
+
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg">
+        <div class="bg-blue-500/10 text-blue-400 font-bold px-3 py-1 rounded-full w-max text-xs mb-4">Kinshasa, CD</div>
+        <h3 class="text-xl font-bold mb-2">Consulting & Commerce</h3>
+        <p class="text-slate-400 text-sm mb-6">Partenariats commerciaux et développement d'affaires transcontinentaux.</p>
+        <a href="connexion.html" class="block text-center py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold text-sm transition">Contacter</a>
+      </div>
+
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg">
+        <div class="bg-amber-500/10 text-amber-400 font-bold px-3 py-1 rounded-full w-max text-xs mb-4">Montréal, CA</div>
+        <h3 class="text-xl font-bold mb-2">Solutions IA & Automation</h3>
+        <p class="text-slate-400 text-sm mb-6">Intégration d'outils d'intelligence artificielle pour l'automatisation des tâches.</p>
+        <a href="connexion.html" class="block text-center py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold text-sm transition">Contacter</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© Lokonda Business — Marketplace active</p>
+    </div>
+  </footer>
+
+</body>
+</html>
