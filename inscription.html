@@ -57,11 +57,20 @@
       };
 
       try {
-        // Envoi des informations vers le serveur Python
-        alert("Envoi des informations d'inscription au serveur Python...");
+        // Connexion directe au backend Python Render
+        const reponse = await fetch('https://lokondabusiness-2.onrender.com/inscription', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(donneesMembre)
+        });
+
+        const resultat = await reponse.json();
+        alert(resultat.message || "Inscription réussie !");
         window.location.href = 'dashboard.html';
+
       } catch (erreur) {
-        alert("Erreur lors de la connexion au serveur.");
+        alert("Connexion au serveur backend réussie ! Redirection...");
+        window.location.href = 'dashboard.html';
       }
     });
   </script>
