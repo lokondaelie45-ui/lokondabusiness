@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Membre - Lokonda Business</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Navigation -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-xl font-extrabold tracking-wider text-amber-400">
+        LOKONDA BUSINESS
+      </div>
+      
+      <nav class="hidden md:flex space-x-6 text-sm text-slate-300">
+        <a href="index.html" class="hover:text-amber-400 transition">Accueil</a>
+        <a href="marketplace.html" class="hover:text-amber-400 transition">Marketplace</a>
+        <a href="ai.html" class="hover:text-amber-400 transition">Lokonda AI</a>
+        <a href="tarifs.html" class="hover:text-amber-400 transition">Tarifs</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <span class="text-sm text-slate-300">Connecté</span>
+        <a href="index.html" class="px-4 py-2 text-sm bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition">
+          Déconnexion
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenu Principal / Tableau de Bord -->
+  <main class="max-w-5xl mx-auto px-4 py-12 flex-grow w-full">
+    <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 shadow-xl mb-8">
+      <h1 class="text-3xl font-bold text-white mb-2">Bienvenue sur votre Espace Membre 👋</h1>
+      <p class="text-slate-400">Votre compte Lokonda Business est actif.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-amber-400 mb-2">Mes Projets</h3>
+        <p class="text-slate-300 text-sm mb-4">Gérez vos services et vos entreprises enregistrées.</p>
+        <button class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg text-sm w-full">Créer un projet</button>
+      </div>
+
+      <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-amber-400 mb-2">Lokonda AI Studio</h3>
+        <p class="text-slate-300 text-sm mb-4">Accédez aux outils d'intelligence artificielle.</p>
+        <a href="ai.html" class="block text-center px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg text-sm w-full">Ouvrir l'IA Studio</a>
+      </div>
+
+      <div class="bg-slate-800 border border-slate-700 p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-amber-400 mb-2">Abonnement</h3>
+        <p class="text-slate-300 text-sm mb-4">Consultez votre forfait actuel et vos factures.</p>
+        <a href="tarifs.html" class="block text-center px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-lg text-sm w-full">Voir les forfaits</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>Plateforme Lokonda Business — Québec (Canada) & RDC</p>
+    </div>
+  </footer>
+
+</body>
+</html>
