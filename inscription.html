@@ -6,42 +6,64 @@
   <title>Inscription - Lokonda Business</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-900 text-white flex items-center justify-center min-h-screen p-4">
-  <div class="bg-slate-800 p-8 rounded-2xl shadow-xl max-w-md w-full border border-slate-700">
-    <h1 class="text-2xl font-bold mb-6 text-center text-amber-400">Créer un compte</h1>
-    
-    <form id="registerForm" class="space-y-4" onsubmit="handleRegister(event)">
-      <div>
-        <label class="block text-sm font-medium mb-1">Nom complet</label>
-        <input type="text" id="fullname" required placeholder="Votre nom et prénom" class="w-full px-4 py-2 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:border-amber-400 text-white">
-      </div>
-      <div>
-        <label class="block text-sm font-medium mb-1">Courriel</label>
-        <input type="email" id="email" required placeholder="votre@email.com" class="w-full px-4 py-2 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:border-amber-400 text-white">
-      </div>
-      <div>
-        <label class="block text-sm font-medium mb-1">Mot de passe</label>
-        <input type="password" id="password" required placeholder="••••••••" class="w-full px-4 py-2 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:border-amber-400 text-white">
-      </div>
-      <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition">
-        S'inscrire
-      </button>
-    </form>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
 
-    <p class="text-center text-sm text-slate-400 mt-6">
-      Déjà un compte ? <a href="connexion.html" class="underline hover:text-white">Se connecter</a>
-    </p>
-    <p class="text-center text-sm text-slate-400 mt-2">
-      <a href="index.html" class="underline hover:text-white">← Retour à l'accueil</a>
-    </p>
-  </div>
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-extrabold tracking-wider text-amber-400">
+        LOKONDA BUSINESS
+      </a>
+      <a href="connexion.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white border border-slate-700 rounded-lg transition">
+        Connexion
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-md mx-auto w-full px-4 py-12 flex-grow flex flex-col justify-center">
+    <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-2xl shadow-xl">
+      <h1 class="text-2xl font-bold text-center mb-6 text-amber-400">Créer un compte</h1>
+      <form id="signupForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1 text-slate-300">Nom complet ou Nom de l'entreprise</label>
+          <input type="text" id="nom" required class="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-amber-400 text-white" placeholder="Lokonda Services">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1 text-slate-300">Courriel</label>
+          <input type="email" id="courriel" required class="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-amber-400 text-white" placeholder="contact@lokonda.com">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1 text-slate-300">Mot de passe</label>
+          <input type="password" id="mot_de_passe" required class="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-amber-400 text-white" placeholder="••••••••">
+        </div>
+        <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition shadow-lg mt-2">
+          S'inscrire
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-sm text-slate-500">
+    © Lokonda Business
+  </footer>
 
   <script>
-    function handleRegister(event) {
-      event.preventDefault();
-      alert("Compte créé avec succès ! Redirection vers la page de connexion...");
-      window.location.href = "connexion.html";
-    }
+    document.getElementById('signupForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const donneesMembre = {
+        nom: document.getElementById('nom').value,
+        courriel: document.getElementById('courriel').value,
+        mot_de_passe: document.getElementById('mot_de_passe').value
+      };
+
+      try {
+        // Envoi des informations vers le serveur Python
+        alert("Envoi des informations d'inscription au serveur Python...");
+        window.location.href = 'dashboard.html';
+      } catch (erreur) {
+        alert("Erreur lors de la connexion au serveur.");
+      }
+    });
   </script>
 </body>
 </html>
