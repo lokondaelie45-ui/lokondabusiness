@@ -6,35 +6,51 @@
   <title>Connexion - Lokonda Business</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-900 text-white flex items-center justify-center min-h-screen p-4">
-  <div class="bg-slate-800 p-8 rounded-2xl shadow-xl max-w-md w-full border border-slate-700">
-    <h1 class="text-2xl font-bold mb-6 text-center text-amber-400">Connexion</h1>
-    
-    <form id="loginForm" class="space-y-4" onsubmit="handleLogin(event)">
-      <div>
-        <label class="block text-sm font-medium mb-1">Courriel</label>
-        <input type="email" id="email" required placeholder="votre@email.com" class="w-full px-4 py-2 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:border-amber-400 text-white">
-      </div>
-      <div>
-        <label class="block text-sm font-medium mb-1">Mot de passe</label>
-        <input type="password" id="password" required placeholder="••••••••" class="w-full px-4 py-2 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:border-amber-400 text-white">
-      </div>
-      <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition">
-        Se connecter
-      </button>
-    </form>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
 
-    <p class="text-center text-sm text-slate-400 mt-6">
-      <a href="index.html" class="underline hover:text-white">← Retour à l'accueil</a>
-    </p>
-  </div>
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-extrabold tracking-wider text-amber-400">
+        LOKONDA BUSINESS
+      </a>
+      <a href="inscription.html" class="px-4 py-2 text-sm bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition">
+        S'inscrire
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-md mx-auto w-full px-4 py-12 flex-grow flex flex-col justify-center">
+    <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-2xl shadow-xl">
+      <h1 class="text-2xl font-bold text-center mb-6 text-amber-400">Connexion</h1>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1 text-slate-300">Courriel</label>
+          <input type="email" required class="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-amber-400 text-white" placeholder="exemple@lokonda.com">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1 text-slate-300">Mot de passe</label>
+          <input type="password" required class="w-full px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-amber-400 text-white" placeholder="••••••••">
+        </div>
+        <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition shadow-lg mt-2">
+          Se connecter
+        </button>
+      </form>
+      <p class="text-center text-sm text-slate-400 mt-6">
+        Pas encore de compte ? <a href="inscription.html" class="text-amber-400 hover:underline">Créer un compte</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-sm text-slate-500">
+    © Lokonda Business
+  </footer>
 
   <script>
-    function handleLogin(event) {
-      event.preventDefault();
-      alert("Connexion réussie ! Redirection vers l'accueil...");
-      window.location.href = "index.html";
-    }
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Connexion réussie ! Redirection vers votre espace membre...');
+      window.location.href = 'dashboard.html';
+    });
   </script>
 </body>
 </html>
