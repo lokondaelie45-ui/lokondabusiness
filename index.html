@@ -1,268 +1,81 @@
 <!DOCTYPE html>
-<html lang="fr" class="h-full bg-slate-900 text-slate-100">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOKONDA BUSINESS - Les idées deviennent des entreprises</title>
-  
-  <!-- Tailwind CSS -->
+  <title>Lokonda Business</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            midnight: '#0b1329',
-            brand: {
-              DEFAULT: '#0f172a',
-              light: '#1e293b',
-              gold: '#fbbf24',
-              goldDark: '#d97706',
-              accent: '#3b82f6',
-              drc: '#0284c7'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Chart.js for Dashboard Analytics -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #fef08a 0%, #fbbf24 50%, #d97706 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .glass-card {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0f172a;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #334155;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #fbbf24;
-    }
-  </style>
 </head>
-<body class="min-h-full flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-900">
+<body class="bg-slate-900 text-white min-h-screen flex flex-col justify-between">
 
-  <div id="toastContainer" class="fixed top-5 right-5 z-50 flex flex-col gap-3 max-w-md w-full pointer-events-none"></div>
-
-  <header class="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-900/90 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('home')">
-        <div class="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 border border-amber-500/40 shadow-lg shadow-amber-500/10 group">
-          <div class="absolute inset-0 rounded-xl bg-amber-500/10 blur group-hover:bg-amber-500/20 transition-all"></div>
-          <svg class="w-6 h-6 text-amber-400 absolute opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-          </svg>
-          <span class="text-xl font-extrabold tracking-wider text-amber-400 font-sans z-10">LB</span>
-        </div>
-        <div>
-          <span class="text-xl font-black tracking-tight text-white flex items-center gap-1.5">
-            LOKONDA <span class="text-amber-400 font-semibold text-sm px-2 py-0.5 rounded bg-amber-400/10 border border-amber-400/30">BUSINESS</span>
-          </span>
-          <p class="text-[10px] text-slate-400 tracking-wide uppercase font-medium">Les idées deviennent des entreprises</p>
-        </div>
+  <!-- Header / Navigation -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-xl font-extrabold tracking-wider text-amber-400">
+        LOKONDA BUSINESS
       </div>
-
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium text-slate-300">
-        <button onclick="navigateTo('home')" class="nav-btn hover:text-amber-400 px-3 py-2 rounded-lg transition-colors">Accueil</button>
-        <button onclick="navigateTo('marketplace')" class="nav-btn hover:text-amber-400 px-3 py-2 rounded-lg transition-colors flex items-center gap-1">
-          <i data-lucide="store" class="w-4 h-4"></i> Marketplace
-        </button>
-        <button onclick="navigateTo('ai-showcase')" class="nav-btn hover:text-amber-400 px-3 py-2 rounded-lg transition-colors flex items-center gap-1.5 text-amber-300">
-          <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i> Lokonda AI
-        </button>
-        <button onclick="navigateTo('pricing')" class="nav-btn hover:text-amber-400 px-3 py-2 rounded-lg transition-colors">Tarifs</button>
+      
+      <!-- Main Navigation Links -->
+      <nav class="hidden md:flex space-x-6 text-sm text-slate-300">
+        <a href="index.html" class="hover:text-amber-400 transition">Accueil</a>
+        <a href="#" class="hover:text-amber-400 transition">Marketplace</a>
+        <a href="#" class="hover:text-amber-400 transition">Lokonda AI</a>
+        <a href="#" class="hover:text-amber-400 transition">Tarifs</a>
       </nav>
 
-      <!-- Right Action Controls -->
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-amber-500/30 text-xs font-medium text-slate-300">
-          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i> Québec, Canada 🇨🇦</span>
-          <span class="text-slate-600">|</span>
-          <span class="flex items-center gap-1"><span class="text-base">🇨🇩</span> RDC</span>
-        </div>
-
-        <button onclick="toggleLanguage()" id="langToggleBtn" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-amber-400 border border-slate-700 transition">
-          FR
-        </button>
-
-        <div id="navAuthArea">
-    <div id="navigation-auth-zone">
-  <a href="connexion.html" class="px-4 py-2 rounded-xl text-sm font-semibold text-white bg-amber-500 hover:bg-amber-600 flex items-center gap-2">
-    <i data-lucide="user" class="w-4 h-4"></i> Connexion
-  </a>
-</div>
-
-
-
-
-             
-      
-        </div>
-
-        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+      <!-- Authentication Buttons -->
+      <div class="flex items-center space-x-3">
+        <a href="connexion.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white border border-slate-700 rounded-lg transition">
+          Connexion
+        </a>
+        <a href="inscription.html" class="px-4 py-2 text-sm bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition">
+          S'inscrire
+        </a>
       </div>
-    </div>
-
-    <!-- Mobile Drawer -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-slate-900 px-4 py-4 space-y-2">
-      <button onclick="navigateTo('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800">Accueil</button>
-      <button onclick="navigateTo('marketplace'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800">Marketplace</button>
-      <button onclick="navigateTo('ai-showcase'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-amber-300 hover:bg-slate-800">Lokonda AI</button>
-      <button onclick="navigateTo('pricing'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800">Tarifs</button>
-      <div id="mobileAuthArea" class="pt-2"></div>
     </div>
   </header>
 
-  <main id="appContainer" class="flex-grow">
-    <!-- Dynamic Content -->
+  <!-- Hero Section -->
+  <main class="max-w-4xl mx-auto text-center px-4 py-20 flex-grow flex flex-col justify-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white">
+      LOKONDA BUSINESS
+    </h1>
+    <p class="text-amber-400 text-lg md:text-xl font-medium mb-6">
+      « Les idées deviennent des entreprises. »
+    </p>
+    <p class="text-slate-400 max-w-2xl mx-auto mb-8 text-sm md:text-base">
+      Plateforme numérique active pour les entreprises de la Ville de Québec (Canada 🇨🇦) et de la République démocratique du Congo (🇨🇩).
+    </p>
+
+    <!-- Contact CTA -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="tel:+15814460727" class="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition shadow-lg">
+        📞 Appel Direct : +1 581 446-0727
+      </a>
+      <a href="mailto:contact@lokondabusiness.com" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold rounded-lg transition">
+        ✉️ Courriel Direct
+      </a>
+    </div>
   </main>
 
-  <footer class="border-t border-slate-800 bg-slate-950 text-slate-400 text-sm py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
-        <div class="flex items-center gap-2 mb-3">
-          <div class="w-8 h-8 rounded-lg bg-slate-800 border border-amber-500/30 flex items-center justify-center font-bold text-amber-400 text-sm">LB</div>
-          <span class="text-lg font-bold text-white tracking-tight">LOKONDA BUSINESS</span>
-        </div>
-        <p class="text-xs text-slate-400 leading-relaxed">
-          La plateforme numérique propulsant le commerce local au Québec (Canada) et en République démocratique du Congo.
-        </p>
-        <p class="text-xs text-amber-400/80 mt-3 font-semibold">« Les idées deviennent des entreprises. »</p>
-      </div>
-
-      <div>
-        <h4 class="text-white font-semibold text-sm mb-3">Plateforme</h4>
-        <ul class="space-y-2 text-xs">
-          <li><a href="#" onclick="navigateTo('marketplace')" class="hover:text-amber-400">Marketplace entreprises</a></li>
-          <li><a href="#" onclick="navigateTo('ai-showcase')" class="hover:text-amber-400">Lokonda AI Studio</a></li>
-          <li><a href="#" onclick="navigateTo('pricing')" class="hover:text-amber-400">Forfaits et Tarifs</a></li>
+        <h2 class="text-white font-bold mb-2">Plateforme</h2>
+        <ul class="space-y-1">
+          <li>Marketplace entreprises</li>
+          <li>Lokonda AI Studio</li>
+          <li>Forfaits et Tarifs</li>
         </ul>
       </div>
-
       <div>
-        <h4 class="text-white font-semibold text-sm mb-3">Zones desservies</h4>
-        <ul class="space-y-2 text-xs">
-          <li><span class="text-slate-300">🇨🇦 Québec :</span> Montréal, Québec, Gatineau</li>
-          <li><span class="text-slate-300">🇨🇩 RDC :</span> Kinshasa, Lubumbashi, Goma</li>
-        </ul>
+        <h2 class="text-white font-bold mb-2">Zones desservies</h2>
+        <p>🇨🇦 Québec : Montréal, Québec, Gatineau</p>
+        <p>🇨🇩 RDC : Kinshasa, Lubumbashi, Goma</p>
       </div>
-
-      <div>
-        <h4 class="text-white font-semibold text-sm mb-3">Légal & Contact</h4>
-        <ul class="space-y-2 text-xs">
-          <li><a href="#" onclick="navigateTo('contact')" class="hover:text-amber-400 font-medium text-amber-300">Nous contacter</a></li>
-          <li class="flex items-center gap-2 text-slate-300">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400"></i>
-            <span>Ville de Québec, QC, Canada</span>
-          </li>
-          <li class="flex items-center gap-2 text-slate-300">
-            <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i>
-            <a href="tel:+15814460727" class="hover:text-amber-400">+1 581 446-0727</a>
-          </li>
-          <li class="flex items-center gap-2 text-slate-300">
-            <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-400"></i>
-            <a href="mailto:Lokondaelie45@gmail.com" class="hover:text-amber-400">Lokondaelie45@gmail.com</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-900 flex justify-between items-center text-xs text-slate-500">
-      <p>&copy; 2026 LOKONDA BUSINESS. Tous droits réservés.</p>
     </div>
   </footer>
 
-  <script>
-    window.state = {
-      currentView: 'home',
-      dashboardTab: 'overview',
-      language: 'FR',
-      user: null,
-      activeShopId: null,
-      activeProductId: null,
-      shops: [
-        {
-          id: 'shop-qc-1',
-          name: 'Boulangerie Saint-Laurent',
-          ownerName: 'Émilie Tremblay',
-          country: 'QC',
-          city: 'Montréal',
-          category: 'Alimentation & Cafe',
-          description: 'Boulangerie artisanale. Pains au levain et viennoiseries.',
-          logo: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=150&auto=format&fit=crop&q=80',
-          banner: 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1000&auto=format&fit=crop&q=80',
-          phone: '+1 581 446-0727',
-          email: 'Lokondaelie45@gmail.com',
-          plan: 'Pro'
-        }
-      ],
-      products: [],
-      orders: []
-    };
-
-    window.navigateTo = function(view) {
-      window.state.currentView = view;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      renderCurrentView();
-    };
-
-    function renderCurrentView() {
-      const container = document.getElementById('appContainer');
-      container.innerHTML = `
-        <section class="py-20 text-center">
-          <h1 class="text-4xl font-extrabold text-white">LOKONDA BUSINESS</h1>
-          <p class="text-amber-400 mt-2 font-semibold">« Les idées deviennent des entreprises. »</p>
-          <p class="text-slate-400 mt-4 max-w-xl mx-auto text-sm px-4">
-            Plateforme numérique active pour les entreprises de la Ville de Québec (Canada 🇨🇦) et de la République démocratique du Congo (🇨🇩).
-          </p>
-          <div class="mt-8 flex justify-center gap-4">
-            <a href="tel:+15814460727" class="px-5 py-2.5 rounded-xl bg-amber-400 font-bold text-slate-900 text-xs">📞 Appel Direct : +1 581 446-0727</a>
-            <a href="mailto:Lokondaelie45@gmail.com" class="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 text-xs">✉️ Courriel Direct</a>
-          </div>
-        </section>
-      `;
-      if (window.lucide) lucide.createIcons();
-    }
-
-    window.onload = function() {
-      renderCurrentView();
-    };
-  </script>
 </body>
 </html>
